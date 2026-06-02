@@ -9,14 +9,12 @@ body {
   font-size: 18px;
 }
 
-/* ✅ THIS is the critical rule */
 .markdown-body {
   max-width: 720px;
   margin: 0 auto;
   padding: 3rem 2rem;
   font-family: "PT Serif", Georgia, serif;
 }
-
 
 /* ===== Headings ===== */
 
@@ -89,6 +87,11 @@ body {
   font-style: italic;
 }
 
+/* author line aligns to the right */
+.markdown-body blockquote p:last-child {
+  text-align: right;
+}
+
 /* ===== Code ===== */
 
 .markdown-body code {
@@ -118,8 +121,6 @@ body {
   margin: 0.4em 0;
 }
 
-
-
 /* Remove bullets from ANY checklist-like list */
 .markdown-body ul.task-list,
 .markdown-body ul:has(input[type="checkbox"]) {
@@ -139,7 +140,6 @@ body {
 .markdown-body li.task-list-item {
   list-style: none !important;
 }
-
 
 /* ===== Horizontal rules ===== */
 
