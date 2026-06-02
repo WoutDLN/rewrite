@@ -1,6 +1,7 @@
 ---
 title: My Essay
 author: John Doe
+bibliography: references.bib
 ---
 
 ## Introduction 
@@ -16,12 +17,16 @@ Lorem *Thripsum*.
 Lorem Foupsum.[^1]
 
 ## Analysis
-Lorem Fipsum.
+Lorem Fipsum [@doe2020; smith2021].
 
 ## Discussion
-Lorem Sipsum.
+Block quote:
+
+> Lorem Sipsum [@doe2020, 22].
 
 ## Conclusion
 Lorem Sepsum.
+
+## References
 
 [^1]: footnote
