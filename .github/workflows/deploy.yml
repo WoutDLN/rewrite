@@ -29,6 +29,7 @@ jobs:
             --template=assets/template/template.html \
             --citeproc \
             --csl=https://www.zotero.org/styles/apa \
+            --toc \
             --output=index.html
 
           # Wrap content with GitHub-style container
