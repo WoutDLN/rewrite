@@ -1,5 +1,6 @@
 ---
 title: My Essay
+author: John Doe
 ---
 
 ## Introduction 
