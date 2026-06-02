@@ -18,5 +18,5 @@ Lorem Fipsum.
 ## Discussion
 Lorem Sipsum.
 
-## Concludsion
+## Conclusion
 Lorem Sepsum.
