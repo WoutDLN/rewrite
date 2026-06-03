@@ -44,7 +44,7 @@ jobs:
             --metadata repo_url="https://github.com/${{ github.repository }}" \
             --metadata edit_url="https://github.com/${{ github.repository }}/blob/main/essay.md" \
             --metadata repo_name="${{ github.repository }}" \
-            --metadata year_first_published="${{ steps.firstdate.outputs.date }}"
+            --metadata year_first_published="${{ steps.firstdate.outputs.date }}" \
             --output=index.html
 
           # Wrap content with GitHub-style container
