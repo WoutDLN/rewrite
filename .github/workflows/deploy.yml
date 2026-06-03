@@ -29,6 +29,18 @@ jobs:
         run: |
           echo "date=$(git log --reverse --format=%cd --date=format:'%Y' | head -n 1)" >> $GITHUB_OUTPUT
 
+      - name: Get repository license
+        id: license
+        run: |
+          LICENSE_NAME=$(gh api repos/${{ github.repository }} --jq '.license.name')
+          LICENSE_URL=$(gh api repos/${{ github.repository }} --jq '.license.url')
+
+          # Fallback URL (human-readable page)
+          LICENSE_HTML="https://github.com/${{ github.repository }}/blob/main/LICENSE"
+
+          echo "name=$LICENSE_NAME" >> $GITHUB_OUTPUT
+          echo "url=$LICENSE_HTML" >> $GITHUB_OUTPUT
+
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
 
@@ -45,6 +57,8 @@ jobs:
             --metadata edit_url="https://github.com/${{ github.repository }}/blob/main/essay.md" \
             --metadata repo_name="${{ github.repository }}" \
             --metadata year_first_published="${{ steps.firstdate.outputs.date }}" \
+            --metadata license_name="${{ steps.license.outputs.name }}" \
+            --metadata license_url="${{ steps.license.outputs.url }}" \
             --output=index.html
 
           # Wrap content with GitHub-style container
