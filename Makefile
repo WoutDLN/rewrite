@@ -13,6 +13,6 @@ preview:
 	--toc \
 	--metadata last_updated="$$LAST_DISPLAY" \
 	--metadata last_updated_iso="$$LAST_ISO" \
-	--metadata first_published="$$FIRST_DISPLAY" \
+	--metadata year_first_published="$$FIRST_DISPLAY" \
 	--metadata first_published_iso="$$FIRST_ISO" \
 	--output=preview.html
