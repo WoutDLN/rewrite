@@ -62,10 +62,6 @@ jobs:
             --metadata license_url="${{ steps.license.outputs.url }}" \
             --output=index.html
 
-          # Wrap content with GitHub-style container
-          sed -i 's/<body>/<body><article class="markdown-body" style="max-width:980px;margin:0 auto;padding:45px;">/' index.html
-          sed -i 's/<\/body>/<\/article><\/body>/' index.html
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
