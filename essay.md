@@ -44,6 +44,12 @@ a code
 block
 ```
 
+### Images
+
+You can also include an image, with a caption, like this one:
+
+![**Figure 1.** A graph to help people decide whether or not they should try to disturb me in my office depending on the urgency of their query. cc-by 4.0 Wout Dillen 2026](assets/img/knock-graph.jpg)
+
 ### Quoting sources
 
 To quote sources, you can automatically generate in-text and full references you have added to your `references.bib` file. Such as, for example, for "this fake quote" [@doe2020, 22]. Supposedly, you can also add several references in the same parenthesis [@doe2020; @smith2021]. And you can also use bock quotes:

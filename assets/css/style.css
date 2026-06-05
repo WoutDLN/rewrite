@@ -297,6 +297,16 @@ body {
   color: #999;
 }
 
+/* ===== Figures ===== */
+
+figcaption {
+  font-size: 0.8em;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
 /* ===== Subtle polish ===== */
 
 
