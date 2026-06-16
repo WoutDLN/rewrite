@@ -21,13 +21,13 @@ The following will explain each of these steps in more detail.
 
 When you are done following the steps below, you will be ready to start writing your essay. Check out the [demo](index.html) (and the markdown file it is generated from) to learn more about how to format your essay in markdown, and be sure to check out our [Crash Course in Academic Writing (CCAW)](https://sslis.github.io/ccaw/index.html) for some tips to help you write the essay.
 
-## Step 0: Software installation etc.
+## Step 0: Requirements
 
 ### 0.1: Install Pandoc
 
 To be able to run the `Makefile` (step 3) and develop your essay locally (recommended even when you publish your essay with GitHub Pages; see step 5), you will need to install `pandoc`. This is a (free, open source) commandline tool designed to transform files from one format into another – in our case: from `Markdown` into `HTML`. 
 
-Pandoc works on most platforms, and in most cases installing the software is very straightforward. You should be able to find simple iinstructions for your operating system here: [https://pandoc.org/installing.html](https://pandoc.org/installing.html).
+Pandoc works on most platforms, and in most cases installing the software is very straightforward. You should be able to find simple instructions for your operating system here: [https://pandoc.org/installing.html](https://pandoc.org/installing.html).
 
 If you can't or are unwilling to install `pandoc` on your computer you can still use the template, but you will have to rely solely on GitHub Pages to visualise your essay, which is a somewhat less convenient workflow.
 
