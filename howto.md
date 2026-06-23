@@ -45,6 +45,8 @@ Using GitHub Desktop is not a requirement to use this template, however. If you 
 
 ## Step 1: Create and initiate your own copy of the template
 
+Visit [the re:write repository on GitHub](https://github.com/WoutDLN/rewrite). Click on the green button that says `Use this template` in the top left. In the drop-down menu, pick `Create a new repository` to start setting up a copy of the repository on your own account. Then clone the repository onto your own device to start developing your essay locally. You can easily do this by using GitHub Desktop, VSC, or do it straight from the command line. 
+
 [^1]: If you have no desire to publish your result online, you can also just download the repository, and work entirely locally by running the `Makefile` (step 3). In this case, you have no need of a GitHub Account. In addition, the repository can easily be incorporated into workflows that use other git hosting and management tools like [Gitea](https://about.gitea.com) or [GitLab](https://about.gitlab.com/) – that may or may not have opportunities to run similar applications to GitHub Pages.
 
 [^2]: The BibLaTeX format (also saved with a `.bib` extension) should also work for formatting your references.
