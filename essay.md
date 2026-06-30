@@ -66,6 +66,7 @@ Or you can add a table like so:
 |Shabaka and the Ancestors|We Are Sent Here By History|2020|
 |Alice Coltrane|The Carnegie Hall Concert (Live)|2024|
 |Kahlil El'Zabar|Spirit Groove: Golden Sea Duo in Shenzhen|2025|
+|Knats|Knats|2025|
 
 ### Quoting sources
 
