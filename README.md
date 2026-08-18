@@ -9,7 +9,7 @@ The template was developed by [Wout Dillen](https://www.hb.se/forskning/forsknin
 
 ## Website Link
 
-🚀 Visit the demo version here: [https://woutdln.github.io/re-write/](https://woutdln.github.io/re-write/).
+🚀 Visit the demo version here: [https://woutdln.github.io/rewrite/](https://woutdln.github.io/rewrite/).
 
 ## Technical requirements
 
