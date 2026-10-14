@@ -1,0 +1,52 @@
+@media print {
+
+  @page {
+    size: A4;
+    margin: 2.2cm 2.5cm;
+  }
+
+  html {
+    font-size: 85%;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .page {
+    margin: 0;
+    padding: 0.5cm 0;
+    max-width: none;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .markdown-body {
+    padding: 0;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+    margin-top: 1.5em;
+  }
+
+  figure,
+  table,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  .site-footer {
+    font-size: 0.9em;
+  }
+
+  .markdown-body a {
+    text-decoration: none;
+  }
+}
