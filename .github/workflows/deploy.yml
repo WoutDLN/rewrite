@@ -84,14 +84,6 @@ jobs:
             --metadata is_howto=true \
             --output=howto.html
 
-          # ===== PDF =====
-          google-chrome \
-            --headless \
-            --disable-gpu \
-            --virtual-time-budget=5000 \
-            --print-to-pdf=essay.pdf \
-            "file://$GITHUB_WORKSPACE/index.html"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
