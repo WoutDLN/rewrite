@@ -76,6 +76,8 @@ To quote sources, you can automatically generate in-text and full references you
 >
 > [@doe2020, 25]
 
+And you can even use a text-style in-text citation when the author's name is part of the sentence, like in the case of this monograph by @doe2020.
+
 ## Conclusion
 Neat, right? Don't forget to check out [CCAW](https://sslis.github.io/ccaw/) for some general academic writing tips.
 
