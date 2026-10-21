@@ -9,7 +9,7 @@ preview:
 	--standalone \
 	--template=assets/template/template.html \
 	--citeproc \
-	--csl=https://www.zotero.org/styles/apa \
+	--csl=assets/csl/apa.csl \
 	--toc \
 	--metadata last_updated="$$LAST_DISPLAY_ESSAY" \
 	--metadata last_updated_iso="$$LAST_ISO_ESSAY" \
@@ -26,7 +26,7 @@ preview:
 	--standalone \
 	--template=assets/template/template.html \
 	--citeproc \
-	--csl=https://www.zotero.org/styles/apa \
+	--csl=assets/csl/apa.csl \
 	--toc \
 	--metadata last_updated="$$LAST_DISPLAY_HOWTO" \
 	--metadata last_updated_iso="$$LAST_ISO_HOWTO" \
