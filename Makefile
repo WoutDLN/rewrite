@@ -44,4 +44,5 @@ wordfile:
 		--standalone \
 		--citeproc \
 		--csl=assets/csl/apa.csl \
+		--reference-doc=assets/template/reference.docx \
 		--output="$$SLUG.docx"

@@ -20,6 +20,17 @@ To develop the essay locally to check changes before committing, install pandoc 
 make preview
 ```
 
+## Generating Word files
+
+It is also possible to generate a Word file directly from the markdown, by similarly navigating to the relevant directory in your terminal and running:
+```
+make wordfile
+```
+This will generate a word document using the default Word template styles.
+
+If you want to make changes to these styles, you can modify the reference document in `assets/template/reference.docx`. To make changes, make sure that you change the *styles*, not just the *text*, by opening the Styles Pane (Home > Styles), finding the style you want to modify, and click on `Modify Style` (via rightclick or dropdown menu).
+
+To make sure that your changes to the styles actually take effect, be sure to save the changes you made to `reference.docx` **and also close the file**. Changes to the styles survive longer in the cache, and may require the file to actually be closed before pandoc can access them.
 ## Affiliations
 
 This resource was developed during Wout's employment at the University of Borås and is affiliated to [Huminfra](https://www.huminfra.se), the Swedish national infrastructure supporting digital and experimental research in the Humanities. In that capacity, it is developed as an in-kind contribution to [DARIAH-SE](https://www.huminfra.se/dariah), the Swedish national node of [DARIAH-EU](https://www.dariah.eu) (Digital Research Infrastructure for the Arts and Humanities), a Pan-European infrastructure that supports digital research and collaboration in the arts and humanities.
