@@ -34,3 +34,14 @@ preview:
 	--metadata first_published_iso="$$FIRST_ISO_HOWTO" \
 	--metadata is_howto=true \
 	--output=howto.html
+
+wordfile:
+	TITLE=$$(sed -n '/^title:/s/^title:[[:space:]]*//p' essay.md | head -n1); \
+	SLUG=$$(echo "$$TITLE" | \
+		tr '[:upper:]' '[:lower:]' | \
+		sed 's/[^a-z0-9]/-/g; s/--*/-/g; s/^-//; s/-$$//'); \
+	pandoc essay.md \
+		--standalone \
+		--citeproc \
+		--csl=assets/csl/apa.csl \
+		--output="$$SLUG.docx"
