@@ -39,9 +39,11 @@ If you can't or are unwilling to install `pandoc` on your computer you can still
 To use this template, you will need to write your essay in markdown (`.md`), and add your references in BibTeX[^2] (`.bib`).
 To write and edit files in these plain text formats, you will need a text editor.
 There are many different free and open source (as well as proprietary) available on all platforms, so just pick the one you're most comfortable with.
+In this walk through, we will be using Visual Studio Code for demonstration purposes.
+Other text editors usually work in a similar way.
 
-If you are weighing options or looking for a recommendation, we suggest using [Visual Studio Code](https://code.visualstudio.com), which is free, open source, and available on all major platforms.
-It comes with some extension-aware syntax highlighting out of the box, and allows you to open a terminal right in the editor, which comes in handy when you are developing your essay locally and frequently running the `Makefile` to update its visualisation in the browser (step 3).
+While it is made by Microsoft, [Visual Studio Code](https://code.visualstudio.com), is a free, open source text editor that is available on all major platforms.
+The software comes with some extension-aware syntax highlighting out of the box, and allows you to open a terminal right in the editor, which comes in handy when you are developing your essay locally and frequently running the `Makefile` to update its visualisation in the browser (step 3).
 It also comes with GitHub integration, so you can even check your version history and evaluate recent repository changes, commit, pull, and push – all from the text editor, without installing a dedicated GitHub development interface like GitHub Desktop (see step 0.3). 
 
 If you are comfortable with the commandline, an even better solution would be to use [VSCodium](https://vscodium.com) instead.
@@ -57,6 +59,7 @@ If you have taken my introduction to GitHub course, you may already have this ap
 Using GitHub Desktop is not a requirement to use this template, however.
 If you are using Visual Studio Code to edit your essay, you can also activate similar functionalities straight from the editor.
 And it is of course also always possible to run all git commands in your terminal.
+In this tutorial, we will be using GitHub Desktop to download and initiate GitHub repositories, for demonstrative purposes.
 
 ## Step 1: Create your own copy of the template
 
@@ -81,11 +84,27 @@ To do this using GitHub Desktop:
 4. In the pop-up that allows you to add a repository, make sure that you are son the GitHub.com tab, and select the repository you just made from the list. This will typically be categorised under the heading **Your Repositories** with a name following the `[username]/[repository-name]` pattern.
 5. Take note of the 'Local Path' underneath the selection menu, this tells you where the repository will be downloaded. Change the path if necessary.
 6. Hit the blue `Clone` button to download the repository onto your local machine.
-7. Find the downloaded repository, and open the directory in your favourite text editor (e.g., Visual Studio Code) to start editing the files.
 
-For a visual walkthrough of steps 1 to 6, see [my video lecture on how to use GitHub](https://play.hb.se/media/0_mvgov641), specifically from minute 57 onwards.
+For a visual walkthrough, see [my video lecture on how to use GitHub](https://play.hb.se/media/0_mvgov641), specifically from minute 57 onwards.
+
+To use the commandline instead, refer to [GitHub's documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 ## Step 2: Start writing your essay
+
+### 2.1: Finding the file to write your essay in
+
+Open Visual Studio Code,  select `File > Open Folder...`, and navigate to the place where you downloaded your repository (see step 1.2[5]).
+This will open the entire directory (including all its subfolders) in the 'Explorer' tab (the 'documents' icon in the top left of the VSC interface).
+There, you will be able to select files to start editing, and see which files have been added or modified since your last commit (see step 4).
+
+In the tree-structure with files and (sub)folders in the explorer view, you'll see one file called `essay.md`.
+This file is used to generate the visualised essay (i.e., `index.html`).
+The file `essay.md` currently contains a demo version that displays examples of the template's main Markdown and BibTeX affordances, like including images, code, links, and references.
+If you would like to keep this file for reference purposes, make a copy.
+If not, feel free to directly start editing `essay.md`. 
+
+
+
 
 
 [^1]: If you have no desire to publish your result online, you can also just download the repository, and work entirely locally by running the `Makefile` (step 3).
