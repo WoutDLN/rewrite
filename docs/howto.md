@@ -59,7 +59,7 @@ If you have taken my introduction to GitHub course, you may already have this ap
 Using GitHub Desktop is not a requirement to use this template, however.
 If you are using Visual Studio Code to edit your essay, you can also activate similar functionalities straight from the editor.
 And it is of course also always possible to run all git commands in your terminal.
-In this tutorial, we will be using GitHub Desktop to download and initiate GitHub repositories, for demonstrative purposes.
+In this tutorial, we will be using GitHub Desktop to download and initiate GitHub repositories, because it allows students to bypass having to install git and initiate repositories via the commandline.
 
 ## Step 1: Create your own copy of the template
 
@@ -91,7 +91,7 @@ To use the commandline instead, refer to [GitHub's documentation](https://docs.g
 
 ## Step 2: Start writing your essay
 
-### 2.1: Finding the file to write your essay in
+### 2.1: Find the file to write your essay in
 
 Open Visual Studio Code,  select `File > Open Folder...`, and navigate to the place where you downloaded your repository (see step 1.2[5]).
 This will open the entire directory (including all its subfolders) in the 'Explorer' tab (the 'documents' icon in the top left of the VSC interface).
@@ -103,9 +103,35 @@ The file `essay.md` currently contains a demo version that displays examples of 
 If you would like to keep this file for reference purposes, make a copy.
 If not, feel free to directly start editing `essay.md`. 
 
+### 2.2: Update your essay's metadata
 
+The `essay.md` file starts with a section written in [YAML](https://yaml.org) that contains the essay's metadata. By default, this section reads:
 
+```
+---
+title: My Essay
+author: Wout Dillen
+bibliography: references.bib
+---
+```
 
+Even if YAML is a data serialization format you are not yet familiar with, it designed to be easily readable and self-explanatory.
+Change the metadata according to your needs, by replacing 'My Essay' with the title of your essay, and 'Wout Dillen' with your own name.
+The bibliography field tells the template where to look for your references. 
+You are free to change this to another file (name and path), but the easiest course of action is probably to just edit the `references.bib` file as you continue your writing process (see also 2.4).
+
+### 2.3: Write your essay
+
+Delete the text below the YAML block, and start writing your essay. 
+You can use all the usual markdown shorthand codes to tell the template how to render your text, e.g. marking headings of various levels, using *italics*, links, images, etc.
+The `essay.md` file includes a demo of most of the codes you'll need to write an essay. 
+If you need more guidance, you can also have a look at the [markdown guide](https://www.markdownguide.org/basic-syntax/) for an introduction to basic markdown syntax, or use this [cheat sheet](https://www.markdownguide.org/cheat-sheet/) for a quick reference.
+
+### 2.4: Add references and generate a bibliography
+
+#### 2.4.1: Add a reference to `references.bib`
+
+#### 2.4.2: Cite referenced works, and include them in the bibliography
 
 [^1]: If you have no desire to publish your result online, you can also just download the repository, and work entirely locally by running the `Makefile` (step 3).
 In this case, you have no need of a GitHub Account.

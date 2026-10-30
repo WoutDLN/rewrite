@@ -18,22 +18,24 @@ preview:
 	--metadata is_essay=true \
 	--output=index.html
 
-	LAST_DISPLAY_HOWTO=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- howto.md); \
-	LAST_ISO_HOWTO=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- howto.md); \
-	FIRST_DISPLAY_HOWTO=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- howto.md | head -n 1); \
-	FIRST_ISO_HOWTO=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- howto.md | head -n 1); \
-	pandoc howto.md \
+howto:
+	LAST_DISPLAY_HOWTO=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- docs/howto.md); \
+	LAST_ISO_HOWTO=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- docs/howto.md); \
+	FIRST_DISPLAY_HOWTO=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- docs/howto.md | head -n 1); \
+	FIRST_ISO_HOWTO=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- docs/howto.md | head -n 1); \
+	pandoc docs/howto.md \
 	--standalone \
 	--template=assets/template/template.html \
 	--citeproc \
 	--csl=assets/csl/apa.csl \
 	--toc \
+	--metadata root_path="../" \
 	--metadata last_updated="$$LAST_DISPLAY_HOWTO" \
 	--metadata last_updated_iso="$$LAST_ISO_HOWTO" \
 	--metadata year_first_published="$$FIRST_DISPLAY_HOWTO" \
 	--metadata first_published_iso="$$FIRST_ISO_HOWTO" \
 	--metadata is_howto=true \
-	--output=howto.html
+	--output=docs/index.html
 
 wordfile:
 	TITLE=$$(sed -n '/^title:/s/^title:[[:space:]]*//p' essay.md | head -n1); \

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to use this template</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">  
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/media.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/img/feather.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/feather.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/feather.png">
+
+
+</head>
+
+<body>
+  <div class="page">
+    <nav class="site-nav" aria-label="Main navigation">
+
+              <a href="../index.html">Home</a>
+      
+      <span class="nav-sep">·</span>
+
+              <span class="active">How-To</span>
+      
+    </nav>
+    <main>
+      <article class="markdown-body">
+
+        <header>
+          <h1>How to use this template</h1>
+
+                    <p class="author">By Wout Dillen</p>
+                  </header>
+
+                <nav class="toc" aria-label="Table of contents">
+          <h2>Contents</h2>
+          <ul>
+          <li><a href="#about" id="toc-about">About</a></li>
+          <li><a href="#step-0-requirements"
+          id="toc-step-0-requirements">Step 0: Requirements</a>
+          <ul>
+          <li><a href="#install-pandoc" id="toc-install-pandoc">0.1:
+          Install Pandoc</a></li>
+          <li><a href="#install-a-text-editor"
+          id="toc-install-a-text-editor">0.2: Install a text
+          editor</a></li>
+          <li><a href="#install-a-github-development-interface-optional"
+          id="toc-install-a-github-development-interface-optional">0.3:
+          Install a GitHub development interface (optional)</a></li>
+          </ul></li>
+          <li><a href="#step-1-create-your-own-copy-of-the-template"
+          id="toc-step-1-create-your-own-copy-of-the-template">Step 1:
+          Create your own copy of the template</a>
+          <ul>
+          <li><a
+          href="#add-the-template-repository-to-your-github-account"
+          id="toc-add-the-template-repository-to-your-github-account">1.1:
+          Add the template repository to your GitHub Account</a></li>
+          <li><a
+          href="#create-a-copy-of-your-repository-on-your-local-machine"
+          id="toc-create-a-copy-of-your-repository-on-your-local-machine">1.2:
+          Create a copy of your repository on your local
+          machine</a></li>
+          </ul></li>
+          <li><a href="#step-2-start-writing-your-essay"
+          id="toc-step-2-start-writing-your-essay">Step 2: Start writing
+          your essay</a>
+          <ul>
+          <li><a href="#find-the-file-to-write-your-essay-in"
+          id="toc-find-the-file-to-write-your-essay-in">2.1: Find the
+          file to write your essay in</a></li>
+          <li><a href="#update-your-essays-metadata"
+          id="toc-update-your-essays-metadata">2.2: Update your essay’s
+          metadata</a></li>
+          <li><a href="#write-your-essay" id="toc-write-your-essay">2.3:
+          Write your essay</a></li>
+          <li><a href="#add-references-and-generate-a-bibliography"
+          id="toc-add-references-and-generate-a-bibliography">2.4: Add
+          references and generate a bibliography</a></li>
+          </ul></li>
+          </ul>
+        </nav>
+                
+        <h2 id="about">About</h2>
+        <p>This template helps students write a critical essay in
+        markdown, with automatic reference formatting via a linked
+        <code>.bib</code> file, while keeping track of their writing
+        process through git’s versioning system. The template uses a
+        built-in workflow for visualising and publishing the essay with
+        GitHub Pages, and/or developing the essay locally with
+        pandoc.</p>
+        <p>To take full advantage of the template, you will need a
+        GitHub account,<a href="#fn1" class="footnote-ref" id="fnref1"
+        role="doc-noteref"><sup>1</sup></a> and to follow these
+        steps:</p>
+        <ol start="0" type="1">
+        <li>Install the suggested software;</li>
+        <li>Create your own copy of the template;</li>
+        <li>Start writing your essay;</li>
+        <li>Run the <code>Makefile</code> to visualise and check your
+        progress locally;</li>
+        <li><code>commit</code> your changes and <code>push</code> them
+        to the remote; an</li>
+        <li>Publish your essay (at any point) with GitHub Pages.</li>
+        </ol>
+        <p>The following will explain each of these steps in more
+        detail.</p>
+        <p>When you are done following the steps below, you will be
+        ready to start writing your essay. Check out the <a
+        href="index.html">demo</a> (and the markdown file it is
+        generated from) to learn more about how to format your essay in
+        markdown, and be sure to check out our <a
+        href="https://sslis.github.io/ccaw/index.html">Crash Course in
+        Academic Writing (CCAW)</a> for some tips to help you write the
+        essay.</p>
+        <h2 id="step-0-requirements">Step 0: Requirements</h2>
+        <h3 id="install-pandoc">0.1: Install Pandoc</h3>
+        <p>To be able to run the <code>Makefile</code> (step 3) and
+        develop your essay locally (recommended even when you publish
+        your essay with GitHub Pages; see step 5), you will need to
+        install <code>pandoc</code>. This is a (free, open source)
+        commandline tool designed to transform files from one format
+        into another – in our case: from <code>Markdown</code> into
+        <code>HTML</code>.</p>
+        <p>Pandoc works on most platforms, and in most cases installing
+        the software is very straightforward. You should be able to find
+        simple instructions for your operating system here: <a
+        href="https://pandoc.org/installing.html">https://pandoc.org/installing.html</a>.</p>
+        <p>If you can’t or are unwilling to install <code>pandoc</code>
+        on your computer you can still use the template, but you will
+        have to rely solely on GitHub Pages to visualise your essay,
+        which is a somewhat less convenient workflow.</p>
+        <h3 id="install-a-text-editor">0.2: Install a text editor</h3>
+        <p>To use this template, you will need to write your essay in
+        markdown (<code>.md</code>), and add your references in BibTeX<a
+        href="#fn2" class="footnote-ref" id="fnref2"
+        role="doc-noteref"><sup>2</sup></a> (<code>.bib</code>). To
+        write and edit files in these plain text formats, you will need
+        a text editor. There are many different free and open source (as
+        well as proprietary) available on all platforms, so just pick
+        the one you’re most comfortable with. In this walk through, we
+        will be using Visual Studio Code for demonstration purposes.
+        Other text editors usually work in a similar way.</p>
+        <p>While it is made by Microsoft, <a
+        href="https://code.visualstudio.com">Visual Studio Code</a>, is
+        a free, open source text editor that is available on all major
+        platforms. The software comes with some extension-aware syntax
+        highlighting out of the box, and allows you to open a terminal
+        right in the editor, which comes in handy when you are
+        developing your essay locally and frequently running the
+        <code>Makefile</code> to update its visualisation in the browser
+        (step 3). It also comes with GitHub integration, so you can even
+        check your version history and evaluate recent repository
+        changes, commit, pull, and push – all from the text editor,
+        without installing a dedicated GitHub development interface like
+        GitHub Desktop (see step 0.3).</p>
+        <p>If you are comfortable with the commandline, an even better
+        solution would be to use <a
+        href="https://vscodium.com">VSCodium</a> instead. This text
+        editor is based on the source code of Visual Studio Code, looks
+        the same, and has the same functionalities. Unlike the Visual
+        Studio Code download file, VSCodium is also licensed under an
+        open MIT license, and has disabled telemetry (the automatic
+        collection of usage for diagnostic purposes etc.).</p>
+        <h3 id="install-a-github-development-interface-optional">0.3:
+        Install a GitHub development interface (optional)</h3>
+        <p><a href="https://desktop.github.com/download/">GitHub
+        Desktop</a> can be a useful tool to keep track of the changes
+        you are making across multiple files in your git-initiated
+        repositories; especially when you have several repositories to
+        keep track of on your local device. It allows you to quickly
+        switch repositories, inspect your latest changes as well as your
+        longer versioning history, commit, push, and pull. If you have
+        taken my introduction to GitHub course, you may already have
+        this application installed on your device.</p>
+        <p>Using GitHub Desktop is not a requirement to use this
+        template, however. If you are using Visual Studio Code to edit
+        your essay, you can also activate similar functionalities
+        straight from the editor. And it is of course also always
+        possible to run all git commands in your terminal. In this
+        tutorial, we will be using GitHub Desktop to download and
+        initiate GitHub repositories, because it allows students to
+        bypass having to install git and initiate repositories via the
+        commandline.</p>
+        <h2 id="step-1-create-your-own-copy-of-the-template">Step 1:
+        Create your own copy of the template</h2>
+        <h3 id="add-the-template-repository-to-your-github-account">1.1:
+        Add the template repository to your GitHub Account</h3>
+        <p>Visit <a href="https://github.com/WoutDLN/rewrite">the
+        re:write repository on GitHub</a>. Click on the green button
+        that says <code>Use this template</code> in the top left. In the
+        drop-down menu, pick <code>Create a new repository</code> to
+        start setting up a copy of the repository on your own account.
+        Choose a name for your repository (or keep the default), choose
+        whether you want your repository to be public or private, and
+        continue. <strong>Note</strong>: the online visualisation of
+        your essay with GitHub Pages will only work if you select
+        ‘public’.</p>
+        <h3
+        id="create-a-copy-of-your-repository-on-your-local-machine">1.2:
+        Create a copy of your repository on your local machine</h3>
+        <p>Once you have a copy of the template in your GitHub account,
+        clone the repository onto your own device to start developing
+        your essay locally. You can easily do this by using GitHub
+        Desktop, VSC, or do it straight from the command line.</p>
+        <p>To do this using GitHub Desktop:</p>
+        <ol type="1">
+        <li>Open GitHub Desktop</li>
+        <li>In the top-left corner, click on the button that reads
+        <code>Current Repository</code></li>
+        <li>Click on the <code>Add</code> button, then choose
+        <code>Clone repository...</code></li>
+        <li>In the pop-up that allows you to add a repository, make sure
+        that you are son the GitHub.com tab, and select the repository
+        you just made from the list. This will typically be categorised
+        under the heading <strong>Your Repositories</strong> with a name
+        following the <code>[username]/[repository-name]</code>
+        pattern.</li>
+        <li>Take note of the ‘Local Path’ underneath the selection menu,
+        this tells you where the repository will be downloaded. Change
+        the path if necessary.</li>
+        <li>Hit the blue <code>Clone</code> button to download the
+        repository onto your local machine.</li>
+        </ol>
+        <p>For a visual walkthrough, see <a
+        href="https://play.hb.se/media/0_mvgov641">my video lecture on
+        how to use GitHub</a>, specifically from minute 57 onwards.</p>
+        <p>To use the commandline instead, refer to <a
+        href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">GitHub’s
+        documentation</a>.</p>
+        <h2 id="step-2-start-writing-your-essay">Step 2: Start writing
+        your essay</h2>
+        <h3 id="find-the-file-to-write-your-essay-in">2.1: Find the file
+        to write your essay in</h3>
+        <p>Open Visual Studio Code, select
+        <code>File &gt; Open Folder...</code>, and navigate to the place
+        where you downloaded your repository (see step 1.2[5]). This
+        will open the entire directory (including all its subfolders) in
+        the ‘Explorer’ tab (the ‘documents’ icon in the top left of the
+        VSC interface). There, you will be able to select files to start
+        editing, and see which files have been added or modified since
+        your last commit (see step 4).</p>
+        <p>In the tree-structure with files and (sub)folders in the
+        explorer view, you’ll see one file called <code>essay.md</code>.
+        This file is used to generate the visualised essay (i.e.,
+        <code>index.html</code>). The file <code>essay.md</code>
+        currently contains a demo version that displays examples of the
+        template’s main Markdown and BibTeX affordances, like including
+        images, code, links, and references. If you would like to keep
+        this file for reference purposes, make a copy. If not, feel free
+        to directly start editing <code>essay.md</code>.</p>
+        <h3 id="update-your-essays-metadata">2.2: Update your essay’s
+        metadata</h3>
+        <p>The <code>essay.md</code> file starts with a section written
+        in <a href="https://yaml.org">YAML</a> that contains the essay’s
+        metadata. By default, this section reads:</p>
+        <pre><code>---
+title: My Essay
+author: Wout Dillen
+bibliography: references.bib
+---</code></pre>
+        <p>Even if YAML is a data serialization format you are not yet
+        familiar with, it designed to be easily readable and
+        self-explanatory. Change the metadata according to your needs,
+        by replacing ‘My Essay’ with the title of your essay, and ‘Wout
+        Dillen’ with your own name. The bibliography field tells the
+        template where to look for your references. You are free to
+        change this to another file (name and path), but the easiest
+        course of action is probably to just edit the
+        <code>references.bib</code> file as you continue your writing
+        process (see also 2.4).</p>
+        <h3 id="write-your-essay">2.3: Write your essay</h3>
+        <p>Delete the text below the YAML block, and start writing your
+        essay. You can use all the usual markdown shorthand codes to
+        tell the template how to render your text, e.g. marking headings
+        of various levels, using <em>italics</em>, links, images, etc.
+        The <code>essay.md</code> file includes a demo of most of the
+        codes you’ll need to write an essay. If you need more guidance,
+        you can also have a look at the <a
+        href="https://www.markdownguide.org/basic-syntax/">markdown
+        guide</a> for an introduction to basic markdown syntax, or use
+        this <a href="https://www.markdownguide.org/cheat-sheet/">cheat
+        sheet</a> for a quick reference.</p>
+        <h3 id="add-references-and-generate-a-bibliography">2.4: Add
+        references and generate a bibliography</h3>
+        <h4 id="add-a-reference-to-references.bib">2.4.1: Add a
+        reference to <code>references.bib</code></h4>
+        <h4
+        id="cite-referenced-works-and-include-them-in-the-bibliography">2.4.2:
+        Cite referenced works, and include them in the bibliography</h4>
+        <section id="footnotes"
+        class="footnotes footnotes-end-of-document" role="doc-endnotes">
+        <hr />
+        <ol>
+        <li id="fn1"><p>If you have no desire to publish your result
+        online, you can also just download the repository, and work
+        entirely locally by running the <code>Makefile</code> (step 3).
+        In this case, you have no need of a GitHub Account. In addition,
+        the repository can easily be incorporated into workflows that
+        use other git hosting and management tools like <a
+        href="https://about.gitea.com">Gitea</a> or <a
+        href="https://about.gitlab.com/">GitLab</a> – that may or may
+        not have opportunities to run similar applications to GitHub
+        Pages.<a href="#fnref1" class="footnote-back"
+        role="doc-backlink">↩︎</a></p></li>
+        <li id="fn2"><p>The BibLaTeX format (also saved with a
+        <code>.bib</code> extension) should also work for formatting
+        your references.<a href="#fnref2" class="footnote-back"
+        role="doc-backlink">↩︎</a></p></li>
+        </ol>
+        </section>
+
+      </article>
+    </main>
+      
+    <footer class="site-footer markdown-body">
+      <div>
+        Copyright © Wout Dillen. 
+      </div>
+
+          <div>
+            
+            
+            
+          </div>
+    </footer>
+  </div>
+</body>
+</html>
