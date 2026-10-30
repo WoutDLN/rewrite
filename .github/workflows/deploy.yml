@@ -86,7 +86,7 @@ jobs:
               --metadata repo_name="${{ github.repository }}" \
               --metadata license_name="${{ steps.license.outputs.name }}" \
               --metadata license_url="${{ steps.license.outputs.url }}" \
-              --metadata is_docs=true \
+              --metadata is_howto=true \
               --output="$OUT"
           }
 

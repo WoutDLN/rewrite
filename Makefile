@@ -39,7 +39,7 @@ howto:
 			--metadata last_updated_iso="$$LAST_ISO" \
 			--metadata year_first_published="$$FIRST_DISPLAY" \
 			--metadata first_published_iso="$$FIRST_ISO" \
-			--metadata is_docs=true \
+			--metadata is_howto=true \
 			--output="$$OUT"; \
 	}; \
 	\
