@@ -60,30 +60,47 @@ jobs:
             --metadata is_essay=true \
             --output=index.html
 
-            # ===== DOCUMENTATION =====
-            LAST_DISPLAY_DOCS=$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- docs/md/howto.md)
-            LAST_ISO_DOCS=$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md)
-            FIRST_DISPLAY_DOCS=$(git log --follow --reverse --format=%cd --date=format:"%Y" -- docs/md/howto.md | head -n 1)
-            FIRST_ISO_DOCS=$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md | head -n 1)
+          # ===== DOCUMENTATION =====
+          build_doc() {
+            SRC="$1"
+            OUT="$2"
 
-            pandoc docs/md/howto.md \
+            LAST_DISPLAY=$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- "$SRC")
+            LAST_ISO=$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- "$SRC")
+            FIRST_DISPLAY=$(git log --follow --reverse --format=%cd --date=format:"%Y" -- "$SRC" | head -n 1)
+            FIRST_ISO=$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- "$SRC" | head -n 1)
+
+            pandoc "$SRC" \
               --standalone \
               --template=assets/template/template.html \
               --citeproc \
               --csl=assets/csl/apa.csl \
               --toc \
               --metadata root_path="../" \
-              --metadata last_updated="$LAST_DISPLAY_DOCS" \
-              --metadata last_updated_iso="$LAST_ISO_DOCS" \
-              --metadata year_first_published="$FIRST_DISPLAY_DOCS" \
-              --metadata first_published_iso="$FIRST_ISO_DOCS" \
+              --metadata last_updated="$LAST_DISPLAY" \
+              --metadata last_updated_iso="$LAST_ISO" \
+              --metadata year_first_published="$FIRST_DISPLAY" \
+              --metadata first_published_iso="$FIRST_ISO" \
               --metadata repo_url="https://github.com/${{ github.repository }}" \
-              --metadata edit_url="https://github.com/${{ github.repository }}/blob/main/docs/md/howto.md" \
+              --metadata edit_url="https://github.com/${{ github.repository }}/blob/main/$SRC" \
               --metadata repo_name="${{ github.repository }}" \
               --metadata license_name="${{ steps.license.outputs.name }}" \
               --metadata license_url="${{ steps.license.outputs.url }}" \
               --metadata is_docs=true \
-              --output=docs/index.html
+              --output="$OUT"
+          }
+
+          for f in docs/md/*.md; do
+            name=$(basename "$f" .md)
+
+            if [ "$name" = "howto" ]; then
+              out="docs/index.html"
+            else
+              out="docs/$name.html"
+            fi
+
+            build_doc "$f" "$out"
+          done
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -19,23 +19,39 @@ preview:
 		--output=index.html
 
 howto:
-	LAST_DISPLAY_DOCS=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- docs/md/howto.md); \
-	LAST_ISO_DOCS=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md); \
-	FIRST_DISPLAY_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- docs/md/howto.md | head -n 1); \
-	FIRST_ISO_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md | head -n 1); \
-	pandoc docs/md/howto.md \
-		--standalone \
-		--template=assets/template/template.html \
-		--citeproc \
-		--csl=assets/csl/apa.csl \
-		--toc \
-		--metadata root_path="../" \
-		--metadata last_updated="$$LAST_DISPLAY_DOCS" \
-		--metadata last_updated_iso="$$LAST_ISO_DOCS" \
-		--metadata year_first_published="$$FIRST_DISPLAY_DOCS" \
-		--metadata first_published_iso="$$FIRST_ISO_DOCS" \
-		--metadata is_docs=true \
-		--output=docs/index.html
+	@build_page() { \
+		SRC="$$1"; \
+		OUT="$$2"; \
+		\
+		LAST_DISPLAY=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- "$$SRC"); \
+		LAST_ISO=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- "$$SRC"); \
+		FIRST_DISPLAY=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- "$$SRC" | head -n 1); \
+		FIRST_ISO=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- "$$SRC" | head -n 1); \
+		\
+		pandoc "$$SRC" \
+			--standalone \
+			--template=assets/template/template.html \
+			--citeproc \
+			--csl=assets/csl/apa.csl \
+			--toc \
+			--metadata root_path="../" \
+			--metadata last_updated="$$LAST_DISPLAY" \
+			--metadata last_updated_iso="$$LAST_ISO" \
+			--metadata year_first_published="$$FIRST_DISPLAY" \
+			--metadata first_published_iso="$$FIRST_ISO" \
+			--metadata is_docs=true \
+			--output="$$OUT"; \
+	}; \
+	\
+	for f in docs/md/*.md; do \
+		name=$$(basename "$$f" .md); \
+		if [ "$$name" = "howto" ]; then \
+			out="docs/index.html"; \
+		else \
+			out="docs/$$name.html"; \
+		fi; \
+		build_page "$$f" "$$out"; \
+	done
 
 wordfile:
 	TITLE=$$(sed -n '/^title:/s/^title:[[:space:]]*//p' essay.md | head -n1); \
