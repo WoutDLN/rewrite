@@ -15,6 +15,11 @@ preview:
 	--metadata last_updated_iso="$$LAST_ISO_ESSAY" \
 	--metadata year_first_published="$$FIRST_DISPLAY_ESSAY" \
 	--metadata first_published_iso="$$FIRST_ISO_ESSAY" \
+	--metadata repo_url="https://github.com/${{ github.repository }}" \
+    --metadata edit_url="https://github.com/${{ github.repository }}/blob/main/essay.md" \
+    --metadata repo_name="${{ github.repository }}" \
+    --metadata license_name="${{ steps.license.outputs.name }}" \
+    --metadata license_url="${{ steps.license.outputs.url }}" \
 	--metadata is_essay=true \
 	--output=index.html
 
@@ -34,6 +39,12 @@ howto:
 	--metadata last_updated_iso="$$LAST_ISO_HOWTO" \
 	--metadata year_first_published="$$FIRST_DISPLAY_HOWTO" \
 	--metadata first_published_iso="$$FIRST_ISO_HOWTO" \
+	--metadata repo_url="https://github.com/${{ github.repository }}" \
+	--metadata edit_url="https://github.com/${{ github.repository }}/blob/main/howto.md" \
+	--metadata edit_url="https://github.com/${{ github.repository }}/blob/main/docs/howto.md" \
+	--metadata repo_name="${{ github.repository }}" \
+	--metadata license_name="${{ steps.license.outputs.name }}" \
+	--metadata license_url="${{ steps.license.outputs.url }}" \
 	--metadata is_howto=true \
 	--output=docs/index.html
 
