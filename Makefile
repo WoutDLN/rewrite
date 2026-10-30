@@ -19,11 +19,11 @@ preview:
 		--output=index.html
 
 howto:
-	LAST_DISPLAY_DOCS=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- docs/howto.md); \
-	LAST_ISO_DOCS=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- docs/howto.md); \
-	FIRST_DISPLAY_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- docs/howto.md | head -n 1); \
-	FIRST_ISO_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- docs/howto.md | head -n 1); \
-	pandoc docs/howto.md \
+	LAST_DISPLAY_DOCS=$$(git log -1 --format=%cd --date=format:"%-d %B %Y" -- docs/md/howto.md); \
+	LAST_ISO_DOCS=$$(git log -1 --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md); \
+	FIRST_DISPLAY_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y" -- docs/md/howto.md | head -n 1); \
+	FIRST_ISO_DOCS=$$(git log --follow --reverse --format=%cd --date=format:"%Y-%m-%d" -- docs/md/howto.md | head -n 1); \
+	pandoc docs/md/howto.md \
 		--standalone \
 		--template=assets/template/template.html \
 		--citeproc \

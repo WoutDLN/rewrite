@@ -129,6 +129,8 @@ If you need more guidance, you can also have a look at the [markdown guide](http
 
 ### 2.4: Add references and generate a bibliography
 
+test
+
 #### 2.4.1: Add a reference to `references.bib`
 
 #### 2.4.2: Cite referenced works, and include them in the bibliography
